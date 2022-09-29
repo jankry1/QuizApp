@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/welcomeScreenFragment3">
+    <fragment
+        android:id="@+id/welcomeScreenFragment3"
+        android:name="com.quizapp.WelcomeScreenFragment"
+        android:label="fragment_welcome_screen"
+        tools:layout="@layout/fragment_welcome_screen" >
+        <action
+            android:id="@+id/action_welcomeScreenFragment3_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.quizapp.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_winFragment"
+            app:destination="@id/winFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_quizFragment_to_loseFragment"
+            app:destination="@id/loseFragment"
+            app:popUpTo="@id/welcomeScreenFragment3"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/winFragment"
+        android:name="com.quizapp.WinFragment"
+        android:label="fragment_win"
+        tools:layout="@layout/fragment_win" >
+        <action
+            android:id="@+id/action_winFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/welcomeScreenFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/loseFragment"
+        android:name="com.quizapp.LoseFragment"
+        android:label="fragment_lose"
+        tools:layout="@layout/fragment_lose" >
+        <action
+            android:id="@+id/action_loseFragment_to_quizFragment"
+            app:destination="@id/quizFragment"
+            app:popUpTo="@id/quizFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.quizapp.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
+    <fragment
+        android:id="@+id/informationFragment"
+        android:name="com.quizapp.InformationFragment"
+        android:label="fragment_information"
+        tools:layout="@layout/fragment_information" />
+</navigation>
